@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/main_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity"
+    >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:background="#00355e">
+
+                        <EditText
+                            android:id="@+id/query1_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="post ID in (1,8)"/>
+
+                        <Button
+                            android:id="@+id/query1_butt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/query1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/query2"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:background="#205177">
+
+                        <EditText
+                            android:id="@+id/query2_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Post ID"/>
+
+                        <Button
+                            android:id="@+id/query2_butt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/query2"/>
+
+                </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+                <LinearLayout
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:background="#3a617f">
+
+                        <EditText
+                            android:id="@+id/query3_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="user ID in (1,3)"/>
+
+                        <Button
+                            android:id="@+id/query3_butt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/query3"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:background="#668ead">
+
+                        <EditText
+                            android:id="@+id/query4_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="user ID"/>
+
+                        <Button
+                            android:id="@+id/query4_butt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/query4"/>
+
+                </LinearLayout>
+        </LinearLayout>
+</LinearLayout>
