@@ -1,4 +1,4 @@
-package com.example.asus.roomfirsttry.ui;
+package com.example.asus.roomfirsttry.ui.firstquery;
 
 
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.asus.roomfirsttry.R;
 import com.example.asus.roomfirsttry.entity.User;
@@ -22,6 +23,7 @@ import java.util.List;
 public class FirstFragment extends Fragment {
 
     private List<User> users;
+    private FirstAdapter adapter;
 
     public FirstFragment() {
 
@@ -53,10 +55,16 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        setRecyclerView(view);
+    }
+
+    private void setRecyclerView(View view) {
+
         RecyclerView recyclerView = view.findViewById(R.id.query1_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         FirstAdapter adapter = new FirstAdapter();
         adapter.setUsers(users);
         recyclerView.setAdapter(adapter);
     }
+
 }

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.asus.roomfirsttry.ui.FirstFragment">
+    tools:context="com.example.asus.roomfirsttry.ui.firstquery.FirstFragment"
+    android:background="#fff">
 
     <TextView
         android:id="@+id/q1_text"
