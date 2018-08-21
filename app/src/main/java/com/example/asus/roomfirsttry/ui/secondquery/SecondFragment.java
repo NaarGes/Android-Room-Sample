@@ -1,8 +1,7 @@
-package com.example.asus.roomfirsttry.ui;
+package com.example.asus.roomfirsttry.ui.secondquery;
 
 
 import android.os.Bundle;
-import android.os.Parcel;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,9 +13,6 @@ import android.view.ViewGroup;
 
 import com.example.asus.roomfirsttry.R;
 import com.example.asus.roomfirsttry.entity.Comment;
-import com.example.asus.roomfirsttry.entity.User;
-import com.example.asus.roomfirsttry.ui.firstquery.FirstAdapter;
-import com.example.asus.roomfirsttry.ui.firstquery.FirstFragment;
 
 import org.parceler.Parcels;
 

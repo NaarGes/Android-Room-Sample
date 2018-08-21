@@ -1,4 +1,4 @@
-package com.example.asus.roomfirsttry.ui;
+package com.example.asus.roomfirsttry.ui.thirdquery;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,11 +12,11 @@ import com.example.asus.roomfirsttry.entity.Comment;
 
 import java.util.List;
 
-public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder> {
+public class ThirdAdapter extends RecyclerView.Adapter<ThirdAdapter.ViewHolder> {
 
     private List<Comment> comments;
 
-    SecondAdapter() {
+    ThirdAdapter() {
 
     }
 
@@ -28,14 +28,14 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ThirdAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View result = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_second, parent, false);
-        return new ViewHolder(result);
+        return new ThirdAdapter.ViewHolder(result);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ThirdAdapter.ViewHolder holder, int position) {
 
         holder.onBind(comments.get(position));
     }
@@ -55,7 +55,7 @@ public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder
         ViewHolder(View itemView) {
             super(itemView);
 
-            text = itemView.findViewById(R.id.q2_text);
+            text = itemView.findViewById(R.id.q3_text);
 
         }
 

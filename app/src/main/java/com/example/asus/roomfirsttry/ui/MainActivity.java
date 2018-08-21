@@ -13,6 +13,8 @@ import com.example.asus.roomfirsttry.database.AppDatabase;
 import com.example.asus.roomfirsttry.entity.Comment;
 import com.example.asus.roomfirsttry.entity.User;
 import com.example.asus.roomfirsttry.ui.firstquery.FirstFragment;
+import com.example.asus.roomfirsttry.ui.secondquery.SecondFragment;
+import com.example.asus.roomfirsttry.ui.thirdquery.ThirdFragment;
 import com.example.asus.roomfirsttry.util.DataGenerator;
 
 import java.util.List;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<User> query1_result;
     private List<Comment> query2_result;
+    private List<Comment> query3_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button query3 = findViewById(R.id.query3_butt);
+        query3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                EditText userId = findViewById(R.id.query3_et);
+                if(!userId.getText().toString().equals("")) {
+                    query3_result = database.myDao().CommentsOfAUser(Integer.parseInt(userId.getText().toString()));
+
+                    ThirdFragment thirdFragment = ThirdFragment.newInstance(query3_result);
+                    setFragment(thirdFragment);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please inter an User ID", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
         Button query4 = findViewById(R.id.query4_butt);
 
     }

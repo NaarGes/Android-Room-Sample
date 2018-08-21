@@ -23,4 +23,11 @@ public interface MyDao {
             "WHERE user_id = :userId")
     public List<Comment> CommentsOfAUser(int userId);
 
+    @Query("SELECT * " +
+            "FROM comment " +
+            "WHERE post_id = :postId")
+    public List<Comment> commentsOfAPost(int postId);
+
+
+
 }
