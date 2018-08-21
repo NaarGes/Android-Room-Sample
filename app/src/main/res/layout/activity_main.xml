@@ -54,7 +54,7 @@
                             android:id="@+id/query2_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Post ID"/>
+                            android:hint="User ID (in 1,3)"/>
 
                         <Button
                             android:id="@+id/query2_butt"
@@ -87,7 +87,7 @@
                             android:id="@+id/query3_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="user ID in (1,3)"/>
+                            android:hint="Post ID"/>
 
                         <Button
                             android:id="@+id/query3_butt"

@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.asus.roomfirsttry.Presenter;
 import com.example.asus.roomfirsttry.R;
 import com.example.asus.roomfirsttry.database.AppDatabase;
+import com.example.asus.roomfirsttry.entity.Comment;
 import com.example.asus.roomfirsttry.entity.User;
 import com.example.asus.roomfirsttry.ui.firstquery.FirstFragment;
 import com.example.asus.roomfirsttry.util.DataGenerator;
@@ -19,8 +19,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Presenter presenter;
-    private List<User> users;
+    private List<User> query1_result;
+    private List<Comment> query2_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         DataGenerator.with(database).generatePosts();
         DataGenerator.with(database).generateComments();
 
-        presenter = new Presenter();
-
         Button query1 = findViewById(R.id.query1_butt);
         query1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
                 EditText postId = findViewById(R.id.query1_et);
                 if(!postId.getText().toString().equals("")) {
-                    users = presenter.firstQueryResult(database, Integer.parseInt(postId.getText().toString()));
+                    query1_result = database.myDao().UsersCommentedOnAPost(Integer.parseInt(postId.getText().toString()));
 
-                    FirstFragment firstFragment = FirstFragment.newInstance(users);
+                    FirstFragment firstFragment = FirstFragment.newInstance(query1_result);
                     setFragment(firstFragment);
                 } else {
                     Toast.makeText(getApplicationContext(), "Please inter an User ID", Toast.LENGTH_SHORT).show();
@@ -53,6 +51,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button query2 = findViewById(R.id.query2_butt);
+        query2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                EditText userId = findViewById(R.id.query2_et);
+                if(!userId.getText().toString().equals("")) {
+                    query2_result = database.myDao().CommentsOfAUser(Integer.parseInt(userId.getText().toString()));
+
+                    SecondFragment secondFragment = SecondFragment.newInstance(query2_result);
+                    setFragment(secondFragment);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please inter an User ID", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         Button query3 = findViewById(R.id.query3_butt);
         Button query4 = findViewById(R.id.query4_butt);
 

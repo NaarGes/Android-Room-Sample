@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">room first try</string>
     <string name="query1">Users commented on a post</string>
-    <string name="query2">Comments of a post</string>
-    <string name="query3">Comments of a user</string>
+    <string name="query3">Comments of a post</string>
+    <string name="query2">Comments of a user</string>
     <string name="query4">Number of a user\'s comments</string>
 
     <!-- TODO: Remove or change this placeholder text -->
