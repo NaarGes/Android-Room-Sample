@@ -13,6 +13,7 @@ import com.example.asus.roomfirsttry.database.AppDatabase;
 import com.example.asus.roomfirsttry.entity.Comment;
 import com.example.asus.roomfirsttry.entity.User;
 import com.example.asus.roomfirsttry.ui.firstquery.FirstFragment;
+import com.example.asus.roomfirsttry.ui.fourthfragment.FourthFragment;
 import com.example.asus.roomfirsttry.ui.secondquery.SecondFragment;
 import com.example.asus.roomfirsttry.ui.thirdquery.ThirdFragment;
 import com.example.asus.roomfirsttry.util.DataGenerator;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private List<User> query1_result;
     private List<Comment> query2_result;
     private List<Comment> query3_result;
+    private int query4_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,20 +77,35 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                EditText userId = findViewById(R.id.query3_et);
-                if(!userId.getText().toString().equals("")) {
-                    query3_result = database.myDao().CommentsOfAUser(Integer.parseInt(userId.getText().toString()));
+                EditText postId = findViewById(R.id.query3_et);
+                if(!postId.getText().toString().equals("")) {
+                    query3_result = database.myDao().CommentsOfAUser(Integer.parseInt(postId.getText().toString()));
 
                     ThirdFragment thirdFragment = ThirdFragment.newInstance(query3_result);
                     setFragment(thirdFragment);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Please inter an User ID", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please inter an Post ID", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
 
         Button query4 = findViewById(R.id.query4_butt);
+        query4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                EditText userId = findViewById(R.id.query4_et);
+                if(!userId.getText().toString().equals("")) {
+                    query4_result = database.myDao().NumberOfUsersComments(Integer.parseInt(userId.getText().toString()));
+
+                    FourthFragment fourthFragment = FourthFragment.newInstance(query4_result);
+                    setFragment(fourthFragment);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please inter an User ID", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 

@@ -29,5 +29,9 @@ public interface MyDao {
     public List<Comment> commentsOfAPost(int postId);
 
 
+    @Query("SELECT COUNT(*) " +
+            "FROM comment " +
+            "WHERE user_id = :userId")
+    public int NumberOfUsersComments(int userId);
 
 }
