@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                EditText postId = findViewById(R.id.query1_et);
+                final EditText postId = findViewById(R.id.query1_et);
                 if(!postId.getText().toString().equals("")) {
-                    query1_result = database.myDao().UsersCommentedOnAPost(Integer.parseInt(postId.getText().toString()));
+                            query1_result = database.myDao().UsersCommentedOnAPost(Integer.parseInt(postId.getText().toString()));
 
-                    FirstFragment firstFragment = FirstFragment.newInstance(query1_result);
-                    setFragment(firstFragment);
+                            FirstFragment firstFragment = FirstFragment.newInstance(query1_result);
+                            setFragment(firstFragment);
                 } else {
                     Toast.makeText(getApplicationContext(), "Please inter an User ID", Toast.LENGTH_SHORT).show();
                 }
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
                 EditText postId = findViewById(R.id.query3_et);
                 if(!postId.getText().toString().equals("")) {
-                    query3_result = database.myDao().CommentsOfAUser(Integer.parseInt(postId.getText().toString()));
+                    query3_result = database.myDao().commentsOfAPost(Integer.parseInt(postId.getText().toString()));
 
                     ThirdFragment thirdFragment = ThirdFragment.newInstance(query3_result);
                     setFragment(thirdFragment);

@@ -31,10 +31,9 @@ public class ThirdFragment extends Fragment {
     public static ThirdFragment newInstance(List<Comment> comments) {
 
         Bundle args = new Bundle();
-
         ThirdFragment fragment = new ThirdFragment();
-        fragment.setArguments(args);
         args.putParcelable("comments", Parcels.wrap(comments));
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -69,5 +68,4 @@ public class ThirdFragment extends Fragment {
         adapter.setComments(comments);
         recyclerView.setAdapter(adapter);
     }
-
 }

@@ -28,14 +28,14 @@ public class ThirdAdapter extends RecyclerView.Adapter<ThirdAdapter.ViewHolder> 
 
     @NonNull
     @Override
-    public ThirdAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View result = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_second, parent, false);
-        return new ThirdAdapter.ViewHolder(result);
+        View result = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_third, parent, false);
+        return new ViewHolder(result);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ThirdAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.onBind(comments.get(position));
     }
